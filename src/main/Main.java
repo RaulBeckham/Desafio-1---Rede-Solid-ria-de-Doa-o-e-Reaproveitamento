@@ -75,4 +75,25 @@ public class Main {
                     System.out.println("Beneficiário cadastrado com sucesso!");
                     break;
 
-                
+                                case 3:
+                    System.out.print("Nome do item: ");
+                    String nomeItem = sc.nextLine();
+                    System.out.print("Categoria: ");
+                    String cat = sc.nextLine();
+                    System.out.print("Descrição: ");
+                    String desc = sc.nextLine();
+                    System.out.print("Quantidade: ");
+                    int qtd = -1;
+                    try {
+                        qtd = Integer.parseInt(sc.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erro: Quantidade deve ser um número inteiro. Tente novamente.");
+                        continue;
+                    }
+                    System.out.print("Estado (ex: bom, ruim, danificado): ");
+                    String estado = sc.nextLine();
+
+                    itens.add(new ItemDoacao(
+                            idItem++, nomeItem, cat, desc, qtd, estado));
+                    System.out.println("Item cadastrado com sucesso!");
+                    break;
