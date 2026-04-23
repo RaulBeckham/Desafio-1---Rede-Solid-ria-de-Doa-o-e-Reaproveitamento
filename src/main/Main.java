@@ -75,7 +75,7 @@ public class Main {
                     System.out.println("Beneficiário cadastrado com sucesso!");
                     break;
 
-                                case 3:
+                    case 3:
                     System.out.print("Nome do item: ");
                     String nomeItem = sc.nextLine();
                     System.out.print("Categoria: ");
@@ -97,3 +97,21 @@ public class Main {
                             idItem++, nomeItem, cat, desc, qtd, estado));
                     System.out.println("Item cadastrado com sucesso!");
                     break;
+
+                    case 4:
+                    doadores.forEach(System.out::println);
+                    break;
+
+                case 5:
+                    beneficiarios.forEach(System.out::println);
+                    break;
+
+                case 6:
+                    itens.forEach(System.out::println);
+                    break;
+            }
+
+        } while (opcao != 0);
+    }
+}
+
