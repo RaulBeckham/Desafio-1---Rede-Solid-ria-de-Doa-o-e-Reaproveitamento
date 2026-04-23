@@ -33,7 +33,7 @@ public class Main {
                 sc.nextLine();
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Erro: Opção deve ser um número. Tente novamente.");
-                sc.nextLine(); // consume invalid input
+                sc.nextLine(); 
                 continue;
             }
 
