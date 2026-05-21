@@ -32,14 +32,14 @@ public class MenuController {
             }
 
             switch (opcao) {
-                case 1 -> cadastrarDoador(sc, doadorRepository);
-                case 2 -> cadastrarBeneficiario(sc, beneficiarioRepository);
-                case 3 -> cadastrarItem(sc, itemRepository);
-                case 4 -> doadorRepository.listarDoadores().forEach(System.out::println);
-                case 5 -> beneficiarioRepository.listarBeneficiarios().forEach(System.out::println);
-                case 6 -> itemRepository.listarItens().forEach(System.out::println);
-                case 7 -> solicitarItem(sc, beneficiarioRepository, itemRepository, solicitacaoService);
-                default -> {
+                case 1: cadastrarDoador(sc, doadorRepository);
+                case 2: cadastrarBeneficiario(sc, beneficiarioRepository);
+                case 3: cadastrarItem(sc, itemRepository);
+                case 4: doadorRepository.listarDoadores().forEach(System.out::println);
+                case 5: beneficiarioRepository.listarBeneficiarios().forEach(System.out::println);
+                case 6: itemRepository.listarItens().forEach(System.out::println);
+                case 7: solicitarItem(sc, beneficiarioRepository, itemRepository, solicitacaoService);
+                default: {
                 }
             }
         } while (opcao != 0);
