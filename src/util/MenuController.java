@@ -33,12 +33,19 @@ public class MenuController {
 
             switch (opcao) {
                 case 1: cadastrarDoador(sc, doadorRepository);
+                break;
                 case 2: cadastrarBeneficiario(sc, beneficiarioRepository);
+                break;
                 case 3: cadastrarItem(sc, itemRepository);
+                break;
                 case 4: doadorRepository.listarDoadores().forEach(System.out::println);
+                break;
                 case 5: beneficiarioRepository.listarBeneficiarios().forEach(System.out::println);
+                break;
                 case 6: itemRepository.listarItens().forEach(System.out::println);
+                break;
                 case 7: solicitarItem(sc, beneficiarioRepository, itemRepository, solicitacaoService);
+                break;
                 default: {
                 }
             }
