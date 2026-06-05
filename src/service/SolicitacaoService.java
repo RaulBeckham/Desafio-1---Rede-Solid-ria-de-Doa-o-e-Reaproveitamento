@@ -11,6 +11,16 @@ public class SolicitacaoService {
     public SolicitacaoService(SolicitacaoRepository solicitacaoRepository) {
         this.solicitacaoRepository = solicitacaoRepository;
     }
+    
+    if (!item.getStatus().equalsIgnoreCase("DISPONIVEL")) {
+
+    solicitacao.setStatus("REJEITADA");
+
+    System.out.println(
+            "Solicitação rejeitada. Item indisponível.");
+
+    return;
+}
 
     public boolean validarQuantidade(ItemDoacao item, int quantidadeSolicitada) {
 

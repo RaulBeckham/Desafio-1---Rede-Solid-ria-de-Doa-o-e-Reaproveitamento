@@ -1,3 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import model.DoacaoEfetivada;
+import repository.ArquivoRepository;
+import service.RelatorioService;
+
 package util;
 
 import java.util.Scanner;
