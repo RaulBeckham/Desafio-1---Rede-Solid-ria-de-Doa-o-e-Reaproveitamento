@@ -1,10 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
-import model.DoacaoEfetivada;
-import repository.ArquivoRepository;
-import service.RelatorioService;
-
 package util;
 
 import java.util.Scanner;
@@ -19,6 +12,7 @@ import repository.BeneficiarioRepository;
 import repository.DoadorRepository;
 import repository.ItemRepository;
 
+import service.RelatorioService;
 import service.SolicitacaoService;
 
 public class MenuController {
@@ -48,61 +42,67 @@ public class MenuController {
 
             switch (opcao) {
 
-                case 1:
-                    cadastrarDoador(sc, doadorRepository);
-                    break;
+    case 1:
+        cadastrarDoador(sc, doadorRepository);
+        break;
 
-                case 2:
-                    cadastrarBeneficiario(sc, beneficiarioRepository);
-                    break;
+    case 2:
+        cadastrarBeneficiario(sc, beneficiarioRepository);
+        break;
 
-                case 3:
-                    cadastrarItem(sc, itemRepository);
-                    break;
+    case 3:
+        cadastrarItem(sc, itemRepository);
+        break;
 
-                case 4:
-                    doadorRepository.listarDoadores()
-                            .forEach(System.out::println);
-                    break;
+    case 4:
+        doadorRepository.listarDoadores()
+                .forEach(System.out::println);
+        break;
 
-                case 5:
-                    beneficiarioRepository.listarBeneficiarios()
-                            .forEach(System.out::println);
-                    break;
+    case 5:
+        beneficiarioRepository.listarBeneficiarios()
+                .forEach(System.out::println);
+        break;
 
-                case 6:
-                    itemRepository.listarItens()
-                            .forEach(System.out::println);
-                    break;
+    case 6:
+        itemRepository.listarItens()
+                .forEach(System.out::println);
+        break;
 
-                case 7:
-                    solicitarItem(
-                            sc,
-                            beneficiarioRepository,
-                            itemRepository,
-                            solicitacaoService
-                    );
-                    break;
+    case 7:
+        solicitarItem(
+                sc,
+                beneficiarioRepository,
+                itemRepository,
+                solicitacaoService
+        );
+        break;
 
-                case 8:
-                    ArquivoRepository.salvar(
-                            itemRepository.listarItens()
-                    );
-                    break;
+    case 8:
+        ArquivoRepository.salvar(
+                itemRepository.listarItens()
+        );
 
-                case 9:
-                    System.out.println(
-                            "Relatório ainda não implementado."
-                    );
-                    break;
+        System.out.println(
+                "Dados salvos com sucesso!"
+        );
+        break;
 
-                case 0:
-                    System.out.println("Encerrando sistema...");
-                    break;
+    case 9:
+        RelatorioService.gerarRelatorio();
+        break;
 
-                default:
-                    System.out.println("Opção inválida.");
-            }
+    case 0:
+        System.out.println(
+                "Encerrando sistema..."
+        );
+        break;
+
+    default:
+        System.out.println(
+                "Opção inválida."
+        );
+}
 
         } while (opcao != 0);
     }
