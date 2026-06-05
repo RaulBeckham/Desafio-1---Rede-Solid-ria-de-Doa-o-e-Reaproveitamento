@@ -24,6 +24,19 @@ public class BeneficiarioRepository {
         }
     }
 
-    return null;
+    return null; 
 }
+public List<Beneficiario> listarPorPrioridade() {
+
+    beneficiarios.sort(
+        (a,b) ->
+        Integer.compare(
+            b.getPrioridade(),
+            a.getPrioridade()
+        )
+    );
+
+    return beneficiarios;
+}
+
 }
