@@ -1,64 +1,97 @@
 Diagrama de classes
 <img width="1536" height="1024" alt="diagrama" src="https://github.com/user-attachments/assets/29ae2db1-c77d-4249-b2db-700b08d136e4" />
-#  Rede Solidária de Doação e Reaproveitamento
 
-Sobre o Projeto
+# Rede Solidária de Doação e Reaproveitamento
 
-A Rede Solidária de Doação e Reaproveitamento é um sistema desenvolvido em Java com foco em conectar doadores e beneficiários, facilitando o reaproveitamento de itens em bom estado e incentivando a solidariedade.
+ Sobre o Projeto
 
-O projeto permite o cadastro de usuários, beneficiários e itens para doação, promovendo uma gestão simples e organizada das doações realizadas.
+A Rede Solidária de Doação e Reaproveitamento é uma aplicação desenvolvida em Java com o objetivo de conectar doadores, beneficiários e instituições que necessitam de recursos básicos.
 
-Este sistema foi desenvolvido como atividade acadêmica utilizando os conceitos de Programação Orientada a Objetos (POO), encapsulamento, herança e organização em camadas.
+O sistema permite o cadastro e gerenciamento de doações, solicitações e beneficiários, promovendo o reaproveitamento de itens em bom estado e contribuindo para a redução do desperdício e das desigualdades sociais.
+
+Este projeto foi desenvolvido como atividade acadêmica utilizando os princípios de Programação Orientada a Objetos (POO), herança, encapsulamento, organização em camadas e persistência de dados em arquivos.
 
 
  Objetivos
 
-- Facilitar a doação de itens reutilizáveis.
+- Facilitar a conexão entre doadores e beneficiários.
 - Promover o reaproveitamento de recursos.
-- Conectar doadores e beneficiários.
+- Reduzir desperdícios.
 - Aplicar conceitos de Programação Orientada a Objetos.
-- Desenvolver uma estrutura organizada seguindo boas práticas de desenvolvimento.
+- Desenvolver uma aplicação estruturada utilizando boas práticas de desenvolvimento.
+- Demonstrar a utilização do Git e GitHub em um ambiente colaborativo.
+
+
+ Objetivos de Desenvolvimento Sustentável (ODS)
+
+O projeto está alinhado com os seguintes ODS da ONU:
+
+- ODS 1 – Erradicação da Pobreza
+- ODS 2 – Fome Zero e Agricultura Sustentável
+- ODS 10 – Redução das Desigualdades
+- ODS 12 – Consumo e Produção Responsáveis
 
 
  Funcionalidades
 
- Usuários
-- Cadastro de usuários
-- Consulta de informações dos usuários
-
- Beneficiários
+ Cadastro de Usuários
+- Cadastro de doadores
 - Cadastro de beneficiários
-- Consulta de dados dos beneficiários
+- Listagem de usuários cadastrados
 
- Doações
+ Gerenciamento de Doações
 - Cadastro de itens para doação
-- Visualização dos itens disponíveis
+- Controle de quantidade disponível
+- Atualização de status dos itens:
+  - Disponível
+  - Reservado
+  - Entregue
+  - Cancelado
 
- Sistema
-- Menu interativo no terminal
-- Organização das entidades em classes
-- Estrutura preparada para futuras melhorias
+ Solicitações
+- Registro de solicitações de itens
+- Validação de disponibilidade
+- Aprovação ou rejeição de solicitações
+- Controle de quantidade solicitada
+
+ Relatórios
+- Relatório de doações realizadas
+- Priorização de beneficiários por nível de urgência
+
+ Persistência de Dados
+- Salvamento dos dados em arquivos
+- Recuperação dos registros ao iniciar o sistema
 
 
  Estrutura do Projeto
 
-
+```text
 src/
 │
 ├── model/
 │   ├── Usuario.java
+│   ├── Doador.java
 │   ├── Beneficiario.java
-│   └── ItemDoacao.java
+│   ├── ItemDoacao.java
+│   ├── Solicitacao.java
+│   └── DoacaoEfetivada.java
 │
-├── util/
-│   └── MenuUtil.java
-│
-├── main/
-│   └── Main.java
+├── repository/
+│   ├── ArquivoRepository.java
+│   ├── BeneficiarioRepository.java
+│   ├── DoadorRepository.java
+│   ├── ItemRepository.java
+│   └── SolicitacaoRepository.java
 │
 ├── service/
-│   └── (Em desenvolvimento)
+│   ├── SolicitacaoService.java
+│   └── RelatorioService.java
 │
-└── repository/
+├── util/
+│   ├── MenuUtil.java
+│   └── MenuController.java
+│
+└── main/
+    └── Main.java
     └── (Em desenvolvimento)
 
